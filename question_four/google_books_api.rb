@@ -5,6 +5,7 @@ q = Query.new(gets.chomp)
 if q.success
   puts q.output
 else
-  puts 'Your search could not be completed.'
-  puts 'please make sure you have an internet connection and try again.'
+  puts 'This program encountered the following error:'
+  puts q.error
+  puts 'Please check your connection and try again'
 end

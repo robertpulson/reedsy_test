@@ -3,7 +3,7 @@ require 'json'
 
 class Query
 
-  attr_reader :success
+  attr_reader :success, :error
 
   def initialize(input)
     @query = input
@@ -17,6 +17,9 @@ class Query
     res = Net::HTTP.get_response(uri)
     @success = true if res.is_a?(Net::HTTPSuccess)
     @results = JSON.parse(res.body)
+  rescue SocketError => e
+    @success = false
+    @error = e
   end
 
   def output
