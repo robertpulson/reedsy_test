@@ -1,7 +1,7 @@
 FactoryGirl.define do
-  factory :activity do
-    actor "MyString"
-    item "MyString"
-    action "MyString"
+  factory :activity do |f|
+    f.actor 'Phil Brockwell'
+    f.item 'new job'
+    f.action 'found'
   end
 end
