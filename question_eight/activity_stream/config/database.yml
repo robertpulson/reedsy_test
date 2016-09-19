@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: activity_stream_development
+
+test:
+  <<: *default
+  database: activity_stream_test
+
+production:
+  <<: *default
+  database: activity_stream_production
+  username: activity_stream
+  password: <%= ENV['ACTIVITY_STREAM_DATABASE_PASSWORD'] %>
