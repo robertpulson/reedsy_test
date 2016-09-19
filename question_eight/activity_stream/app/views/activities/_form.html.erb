@@ -1,0 +1,6 @@
+<%= form_for [@new_activity] do |f| %>
+  <%= f.text_field :actor, placeholder: 'Who did it?' %>
+  <%= f.text_field :action, placeholder: 'What did they do?' %>
+  <%= f.text_field :item, placeholder: 'What did they do it to?' %>
+  <%= f.submit %>
+<% end %>

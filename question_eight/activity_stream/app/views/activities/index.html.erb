@@ -1,0 +1,7 @@
+<% if @activities.any? %>
+  <%= render partial: 'activity', collection: @activities, as: :activity %>
+<% else %>
+  Add some activities below!
+<% end %>
+
+<%= render 'form' %>
