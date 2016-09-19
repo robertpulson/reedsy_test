@@ -1,4 +1,5 @@
 <div class='activity'>
+  <%= image_tag 'book-icon.png', class: 'book-icon' %>
   <p class='activity-text'><%= activity.activity_string %></p>
-  <p class='time-text'><%= activity.time_string %></p>
+  <p class='time-text'>on the <%= activity.time_string %></p>
 </div>
