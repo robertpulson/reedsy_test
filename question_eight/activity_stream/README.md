@@ -8,4 +8,4 @@
 * Open it in your browser: `localhost:3000/`
 * Enjoy!
 
-Alternatively; check it out on [heroku](mysterious-eyrie-69531.herokuapp.com).
+Alternatively; check it out on [heroku](http://mysterious-eyrie-69531.herokuapp.com).
