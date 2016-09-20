@@ -1,0 +1,12 @@
+To build a redundant architecture we would need to protect against three main failures:
+
+Database Failure
+
+Firstly, regular backups would be made of the production database, and the production would be hosted on a separate server to the application. These backups would then be used to populate a secondary database, located on a different server to the original. As soon as the original db/server raised any errors, the app would switch to the backup db, thus limiting downtime while the server issue is fixed.
+
+Assets Failure
+Assets can also be hosted on multiple servers, and is often outsourced to third party storage providers, such as Amazon S3. Amazon will host assets on a variety of different servers in different locations, to improve performance of asset serving based on the user location. If one of these servers is to fail, the request is easily redirected to an alternate. 
+
+App Failure
+Once again app failure can be protected against by running two identical production applications. This technique is often called Blue and Green. One of the identical applications will be live, serving the traffic, whilst the other is shadowing it. If there is a failure of the primary application, the shadow can easily take over serving requests. This can be particularly useful when deploying new releases. It can limit downtime by switching to the shadow when a new deploy is being made. And can also reduce risk with new releases; if a bug is detected, a previous version can be rollback using the shadow app.
+
