@@ -1,4 +1,4 @@
-== Getting Started
+## Getting Started
 
 * Clone the repo: `git clone git@github.com:robertpulson/reedsy_test.git`
 * Navigate into the directory: `cd reedsy_test/question_eight/activity_stream`
