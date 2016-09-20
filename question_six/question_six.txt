@@ -1,0 +1,27 @@
+The proxy pattern can be used for a number of different reasons, but is mainly a means to control access to the real object, and its methods.
+
+def some_method
+  return unless user.valid
+  return unless user.has_permission
+  @real_object.some_method
+end
+
+In this example the proxy will validate the user and check its permission before calling the method on the real object. Of course these checks could be made in the real_object, but the use of a proxy allows sepearation of dependencies. The real object is responsible for its self, and the proxy is responsible for controlling access to the real object.
+The proxy pattern can also be a means of controlling memory use. If our real object is particularly expensive to initialise, we can use a proxy to limit this expense, and enhance efficiency. Similar to the previous question, but instead of passing the real object to the proxys initialise method, we pass a block instead. The block creates the real object, only when it is required.
+
+class Proxy
+
+  def initialise(&create_real_object)
+    @create_real_object = create_real_object
+  end
+
+  def some_method
+    return unless user.valid
+    return unless user.has_permission
+    real_object.some_method
+  end
+
+  def real_object
+    @subject ||= @create_real_object.call
+  end
+end

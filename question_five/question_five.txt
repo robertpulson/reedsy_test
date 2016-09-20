@@ -1,0 +1,15 @@
+Please describe how you would implement a Proxy Pattern in Ruby?
+
+In order to implement the proxy pattern a proxy object is required. The proxy acts as an interface for communications to the real object. When the proxy is initialised it contains a reference to the real object, so that when the real objects methods are called the requests can be forwarded. The proxy can then return the real objects return value and appear as if it was the original object.
+
+class Proxy
+
+  def initialize(real_object)
+    @real_object = real_object
+  end
+
+  def some_method
+    @real_object.some_method
+  end
+end
+
