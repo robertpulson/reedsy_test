@@ -18,7 +18,17 @@ describe Activity do
     end
 
     it 'is invalid without a action' do
-      a = FactoryGirl.build(:activity, item: nil)
+      a = FactoryGirl.build(:activity, action: nil)
+      expect(a).not_to be_valid
+    end
+
+    it 'is invalid with invalid items' do
+      a = FactoryGirl.build(:activity, item: 'fishing')
+      expect(a).not_to be_valid
+    end
+    
+    it 'is invalid with invalid actions' do
+      a = FactoryGirl.build(:activity, action: 'fish')
       expect(a).not_to be_valid
     end
   end
