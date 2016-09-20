@@ -1,7 +1,7 @@
 <%= form_for [@new_activity] do |f| %>
   <%= f.text_field :actor, placeholder: 'Who did it?' %>
-  <%= f.select :action, options_for_select(Activity::ACTION_OPTIONS) %>
-  <%= f.select :item, options_for_select(Activity::ITEM_OPTIONS) %>
+  <%= f.select :action, options_for_select(@actions) %>
+  <%= f.select :item, options_for_select(@items) %>
   <br>
   <%= f.submit %>
 <% end %>
